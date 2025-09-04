@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Підтвердження електронної пошти</title>
+    <style>
+     .root { font-family: "e-Ukraine", Arial, sans-serif; }
+    .header { font-family: "e-Ukraine-Head", Arial, sans-serif; font-weight: 400; font-size: 24px; letter-spacing: -0.01em; color:#000; }
+    .title  { font-family: "e-Ukraine-Head", Arial, sans-serif; font-weight: 400; font-size: 32px; letter-spacing: -0.01em; color:#000; }
+    .text   { font-family: "e-Ukraine", Arial, sans-serif; font-weight: 400; font-size: 20px; letter-spacing: -0.02em; color:#000; line-height:30px; }
+    .helper { font-family: "e-Ukraine", Arial, sans-serif; font-weight: 400; font-size: 16px; letter-spacing: -0.02em; color:#8f8f8f; }
+    .footer { font-family: "e-Ukraine", Arial, sans-serif; font-weight: 500; font-size: 14px; line-height: 137%; letter-spacing: -0.04em; color:#2f2f2f; }
+    
+  </style>
+</head>
+<body style="margin:0; padding:0; background-color:#f5f5f5;">
+
+  <!-- Основной контейнер -->
+  <table role="presentation" align="center" cellpadding="0" cellspacing="0" width="1000" style="background-color:#ffffff; margin:20px auto;">
+    <tr>
+      <td style="padding:20px;" class="root">
+
+        <!-- Логотип -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td align="left" style="padding:20px;">
+              <img src="cid:logo@yourapp" alt="logo" width="150" style="display:block; border:0; outline:none; text-decoration:none;">
+            </td>
+          </tr>
+        </table>
+
+        <!-- Заголовок (FormHeader) -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td align="center"
+                class="header"
+                style="font-family:'e-Ukraine-Head', Arial, sans-serif; font-weight:400; font-size:24px; letter-spacing:-0.01em; color:#000; padding-bottom:55px; mso-line-height-rule:exactly;">
+              Підтвердження електронної пошти
+            </td>
+          </tr>
+        </table>
+
+        <!-- Тайтл (FormTitle) -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td align="center"
+                class="title"
+                style="font-family:'e-Ukraine-Head', Arial, sans-serif; font-weight:400; font-size:32px; letter-spacing:-0.01em; color:#000; padding-bottom:24px; mso-line-height-rule:exactly;">
+              Вітаємо!
+            </td>
+          </tr>
+        </table>
+
+        <!-- Основной текст (FormText) -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td align="center"
+                class="text"
+                style="font-family:'e-Ukraine', Arial, sans-serif; font-weight:400; font-size:20px; letter-spacing:-0.02em; color:#000; line-height:30px; mso-line-height-rule:exactly;">
+              Ваш обліковий запис успішно створено.<br>
+              Активуйте його,
+              <a href="{{domain}}/auth/new-verification?token={{token}}"
+                 target="_blank" rel="noopener noreferrer"
+                 style="color:#0175e1; text-decoration:underline; text-decoration-skip-ink:none;">
+                 перейшовши за посиланням.
+              </a><br>
+              Дякуємо, що приєдналися до нас.
+            </td>
+          </tr>
+        </table>
+
+        <!-- Отступ как в макете -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+          <tr><td style="height:40px; line-height:40px; font-size:0;">&nbsp;</td></tr>
+        </table>
+
+        <!-- Хелпер-текст (FormHelperText) -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td align="center"
+                class="helper"
+                style="font-family:'e-Ukraine', Arial, sans-serif; font-weight:400; font-size:16px; letter-spacing:-0.02em; color:#8f8f8f; padding:0 0 30px 0;">
+              Якщо Ви не реєструвались, проігноруйте це повідомлення.
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+
+    <!-- Подвал (FormFooter / FormFooterText) -->
+    <tr>
+      <td align="center"
+          class="footer"
+          style="background:#d9d9d9; padding:20px; font-family:'e-Ukraine', Arial, sans-serif; font-weight:500; font-size:14px; line-height:137%; letter-spacing:-0.04em; color:#2f2f2f;">
+        ©2025 Комунальне підприємство «Центр управління інформаційними технологіями»
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

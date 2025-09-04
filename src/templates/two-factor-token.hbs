@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Двофакторна аутентифікація</title>
+  <style>
+    @font-face {
+      font-family: "e-Ukraine";
+      src: url('./fonts/e-Ukraine/e-Ukraine-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    body {
+      font-family: "e-Ukraine", sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    td {
+      padding-bottom: 15px;
+    }
+    .code {
+      display: block;
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 4px;
+      text-align: center;
+      color: #e41b85;
+      width: 200px;
+      margin: 20px auto;
+      user-select: all;
+    }
+  </style>
+</head>
+<body>
+  <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+    <tr>
+    <td style="text-align: left; padding-bottom: 20px;">
+      <img 
+        src="cid:logo@yourapp" 
+        alt="Logo" 
+        width="150" 
+        style="display: block;" 
+      />
+    </td>
+  </tr>
+    <tr>
+      <td style="color: #000; text-align: center; padding: 10px; font-size: 20px;">
+        Двофакторна аутентифікація
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 20px; font-size: 16px; color: #333;">
+        <p>Шановний користувач!</p>
+        <p>Ваш одноразовий код для входу до Кабінету мешканця:</p>
+        <span class="code">{{twoFactorCode}}</span>
+        <p>Цей код дійсний протягом 5 хвилин.</p>
+        <p>Якщо Ви не надсилали запит на вхід — проігноруйте це повідомлення.</p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+

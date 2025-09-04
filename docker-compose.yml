@@ -1,0 +1,6 @@
+services:
+  smart-city-app:
+    image: smart-city-test:latest
+    env_file:
+      - .env
+    network_mode: 'host'
