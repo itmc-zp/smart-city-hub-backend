@@ -3,4 +3,5 @@ services:
     image: smart-city-test:latest
     env_file:
       - .env
-    network_mode: 'host'
+    ports:
+      - '3002:3002'

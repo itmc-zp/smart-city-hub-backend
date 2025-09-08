@@ -51,7 +51,7 @@ COPY --from=builder /app/client ./client
 # ❗️ НЕ ХВАТАЕТ: public
 COPY --from=builder /app/public ./public
 
-EXPOSE 3001
+EXPOSE 3002
 
 CMD ["node", "dist/main.js"]
 
