@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { hash } from 'argon2';
 import { AuthMethod, TwoFactorType, User } from 'src/entities/user.entity';
+import { MailService } from 'src/libs/mail/mail.service';
 import { Repository } from 'typeorm';
 import { UpdateUserDto } from './dto/update.user.dto';
 
@@ -10,6 +11,7 @@ export class UserService {
   constructor(
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
+     private readonly mailService: MailService,
   ) {}
 
   async findById(id: string): Promise<User> {
@@ -86,7 +88,14 @@ export class UserService {
   }
 
   async setTwoFactorType(userId: string, type: TwoFactorType): Promise<void> {
+    const user = await this.findById(userId);
+
+    const wasEmail = user.twoFactorType === TwoFactorType.EMAIL;
     await this.userRepository.update(userId, { twoFactorType: type });
+
+    if (type === TwoFactorType.EMAIL && !wasEmail) {
+      this.mailService.sendTwoFactorEnabledEmail(user.email)
+    }
   }
   
 }

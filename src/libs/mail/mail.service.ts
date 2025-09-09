@@ -75,6 +75,17 @@ export class MailService {
     );
   }
   
+
+  public async sendAccountDeletedEmail(email: string) {
+
+    return this.sendMail(
+      email,
+      { },
+      'Ваш обліковий запис видалено',
+      'account-deleted', 
+    );
+  }
+
   public async sendConfirmationEmail(email: string, token: string) {
     const domain = this.configService.getOrThrow<string>('APP_ORIGIN');
     const assetsBase = this.configService.getOrThrow<string>('APPLICATION_URL');
@@ -93,5 +104,13 @@ export class MailService {
     );
   }
   
+  public async sendTwoFactorEnabledEmail(email: string) {
+    return this.sendMail(
+      email,
+      {}, 
+      'Двофакторну автентифікацію успішно активовано',
+      'two-factor-enabled' 
+    );
+  }
   
 }

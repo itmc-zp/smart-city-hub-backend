@@ -17,6 +17,7 @@ import * as qrcode from 'qrcode';
 import * as speakeasy from 'speakeasy';
 import { Account } from 'src/entities/account.entity';
 import { AuthMethod, TwoFactorType, User } from 'src/entities/user.entity';
+import { MailService } from 'src/libs/mail/mail.service';
 import { getGoogleGender } from 'src/providers/providers.config';
 import { UserService } from 'src/user/user.service';
 import { hashStableId, mapProviderToAuthMethod, maskStableId, normalizeExpires } from 'src/utils/diia.helpers';
@@ -39,6 +40,7 @@ export class AuthService {
     private readonly twoFactorAuthService: TwoFactorAuthService,
     private readonly providerService: ProviderService,
     private readonly jwtService: JwtService,
+    private readonly mailService: MailService,
   ) {}
 
   public async register(dto: RegisterDto) {
@@ -145,6 +147,8 @@ export class AuthService {
       throw new NotFoundException('Користувача не знайдено.');
     }
 
+    const email = user.email;
+
     await this.accountRepository
       .createQueryBuilder()
       .delete()
@@ -152,6 +156,10 @@ export class AuthService {
       .execute();
 
     await this.userService.delete(userId);
+
+    this.mailService.sendAccountDeletedEmail(email).catch((err) => {
+      console.error('Failed to send account deletion email', err);
+    });
   }
 
   public async extractProfileFromCode(

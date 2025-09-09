@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.f94ac5e3.css",
-    "main.js": "/static/js/main.68b06e20.js",
+    "main.js": "/static/js/main.1cde315f.js",
     "static/media/e-UkraineHead-Regular.otf": "/static/media/e-UkraineHead-Regular.4e9dc7df09b113ce919f.otf",
     "static/media/e-UkraineHead-Medium.otf": "/static/media/e-UkraineHead-Medium.b86fdf0f27a162dd685a.otf",
     "static/media/e-Ukraine-Medium.otf": "/static/media/e-Ukraine-Medium.768e3644ab7db178be11.otf",
@@ -37,10 +37,10 @@
     "static/media/arr-right.svg": "/static/media/arr-right.5fb8c4d4a4e5877d4f9d24445526451e.svg",
     "static/media/close-icon.svg": "/static/media/close-icon.20398915f82b59d45af5532881ceaf6e.svg",
     "main.f94ac5e3.css.map": "/static/css/main.f94ac5e3.css.map",
-    "main.68b06e20.js.map": "/static/js/main.68b06e20.js.map"
+    "main.1cde315f.js.map": "/static/js/main.1cde315f.js.map"
   },
   "entrypoints": [
     "static/css/main.f94ac5e3.css",
-    "static/js/main.68b06e20.js"
+    "static/js/main.1cde315f.js"
   ]
 }

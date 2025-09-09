@@ -3,6 +3,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from 'src/auth/auth.module';
 import { User } from 'src/entities/user.entity';
+import { MailModule } from 'src/libs/mail/mail.module';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
 
@@ -14,6 +15,7 @@ import { UserService } from './user.service';
     }),
     TypeOrmModule.forFeature([User]),
     forwardRef(() => AuthModule),
+    MailModule
   ],
   controllers: [UserController],
   providers: [UserService],

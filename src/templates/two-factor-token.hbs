@@ -1,65 +1,192 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Двофакторна аутентифікація</title>
-  <style>
-    @font-face {
-      font-family: "e-Ukraine";
-      src: url('./fonts/e-Ukraine/e-Ukraine-Regular.otf') format('opentype');
-      font-weight: 400;
-      font-style: normal;
-    }
-    body {
-      font-family: "e-Ukraine", sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    td {
-      padding-bottom: 15px;
-    }
-    .code {
-      display: block;
-      font-size: 32px;
-      font-weight: bold;
-      letter-spacing: 4px;
-      text-align: center;
-      color: #e41b85;
-      width: 200px;
-      margin: 20px auto;
-      user-select: all;
-    }
-  </style>
-</head>
-<body>
-  <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
-    <tr>
-    <td style="text-align: left; padding-bottom: 20px;">
-      <img 
-        src="cid:logo@yourapp" 
-        alt="Logo" 
-        width="150" 
-        style="display: block;" 
-      />
-    </td>
-  </tr>
-    <tr>
-      <td style="color: #000; text-align: center; padding: 10px; font-size: 20px;">
-        Двофакторна аутентифікація
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 20px; font-size: 16px; color: #333;">
-        <p>Шановний користувач!</p>
-        <p>Ваш одноразовий код для входу до Кабінету мешканця:</p>
-        <span class="code">{{twoFactorCode}}</span>
-        <p>Цей код дійсний протягом 5 хвилин.</p>
-        <p>Якщо Ви не надсилали запит на вхід — проігноруйте це повідомлення.</p>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
+<html lang='uk'>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Двофакторна автентифікація</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <style>
+      @media only screen and (max-width: 600px) {
+        .container {
+          width: 100% !important;
+        }
+        .stack {
+          display: block !important;
+          width: 100% !important;
+        }
+        .px20 {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+        .center {
+          text-align: center !important;
+        }
+      }
+    </style>
+  </head>
+  <body style='margin:0; padding:0; background:#f5f5f5;'>
+    <table
+      role='presentation'
+      cellpadding='0'
+      cellspacing='0'
+      border='0'
+      width='100%'
+      style='background:#f5f5f5;'
+    >
+      <tr>
+        <td align='center' style='padding:20px 0;'>
 
+          <table
+            role='presentation'
+            class='container'
+            cellpadding='0'
+            cellspacing='0'
+            border='0'
+            width='1000'
+            style='width:1000px; background:#ffffff; margin:0 auto;'
+          >
+            <tr>
+              <td class='px20' style='padding:20px;'>
+
+                <table
+                  role='presentation'
+                  width='100%'
+                  cellpadding='0'
+                  cellspacing='0'
+                  border='0'
+                  style='table-layout:fixed; background:#ffffff;'
+                >
+                  <tr>
+                    <td
+                      class='stack center'
+                      align='left'
+                      valign='middle'
+                      width='150'
+                      style='padding:0; width:150px;'
+                    >
+                      <img
+                        src='cid:logo@yourapp'
+                        alt='logo'
+                        width='150'
+                        style='display:block; border:0; outline:none; text-decoration:none; height:auto;'
+                      />
+                    </td>
+                    <td
+                      class='stack'
+                      align='center'
+                      valign='middle'
+                      style="padding:0; font-family:'e-Ukraine-Head', Arial, sans-serif; font-size:20px; line-height:32px; color:#000;"
+                    >
+                      Двофакторна автентифікація
+                    </td>
+                    <td
+                      class='stack'
+                      align='right'
+                      valign='middle'
+                      width='150'
+                      style='padding:0; width:150px; font-size:0; line-height:0;'
+                    >&nbsp;</td>
+                  </tr>
+                </table>
+
+                <table
+                  role='presentation'
+                  width='100%'
+                  cellpadding='0'
+                  cellspacing='0'
+                  border='0'
+                  style='background:#ffffff;'
+                >
+                  <tr>
+                    <td
+                      align='center'
+                      style="padding:30px 0 24px 0; font-family:'e-Ukraine-Head', Arial, sans-serif; font-size:24px; line-height:40px; color:#000;"
+                    >
+                      Шановний користувач!
+                    </td>
+                  </tr>
+                </table>
+
+                <table
+                  role='presentation'
+                  width='100%'
+                  cellpadding='0'
+                  cellspacing='0'
+                  border='0'
+                  style='background:#ffffff;'
+                >
+                  <tr>
+                    <td
+                      align='center'
+                      style="padding:0 20px 16px 20px; font-family:'e-Ukraine', Arial, sans-serif; font-size:20px; line-height:30px; color:#000;"
+                    >
+                      Ваш одноразовий код для входу до Кабінету мешканця:
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align='center' style='padding:0;'>
+                      <span
+                        style="display:inline-block; margin:0 auto; padding:10px; border:1px solid #8f8f8f; font-family:'e-Ukraine', Arial, sans-serif; font-size:20px; font-weight:400; letter-spacing:0.2em; color:#e41b85;"
+                      >
+                        5968894
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      align='center'
+                      style="padding:12px 20px 0 20px; font-family:'e-Ukraine', Arial, sans-serif; font-size:16px; line-height:24px; color:#8f8f8f;"
+                    >
+                      Цей код дійсний протягом 5 хвилин.
+                    </td>
+                  </tr>
+                </table>
+
+                <table
+                  role='presentation'
+                  width='100%'
+                  cellpadding='0'
+                  cellspacing='0'
+                  border='0'
+                  style='background:#ffffff;'
+                >
+                  <tr><td
+                      style='height:40px; line-height:40px; font-size:0;'
+                    >&nbsp;</td></tr>
+                </table>
+
+                <table
+                  role='presentation'
+                  width='100%'
+                  cellpadding='0'
+                  cellspacing='0'
+                  border='0'
+                  style='background:#ffffff;'
+                >
+                  <tr>
+                    <td
+                      align='center'
+                      style="padding:0 20px 30px 20px; font-family:'e-Ukraine', Arial, sans-serif; font-size:16px; line-height:24px; color:#8f8f8f;"
+                    >
+                      Якщо Ви не надсилали запит на вхід — проігноруйте це
+                      повідомлення.
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td
+                align='center'
+                style="background:#d9d9d9; padding:20px; font-family:'e-Ukraine', Arial, sans-serif; font-weight:500; font-size:14px; line-height:20px; color:#2f2f2f;"
+              >
+                ©2025 Комунальне підприємство «Центр управління інформаційними
+                технологіями»
+              </td>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
